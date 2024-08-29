@@ -1,17 +1,288 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Travis's Resume</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+   
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+   <link rel="stylesheet" href="css/magnific-popup.css">
+
+   
+
+   <!-- Script
+   ================================================== -->
+   <script src="js/modernizr.js"></script>
+   
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.png" >
+
 </head>
 
 <body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
+
+   <!-- Header
+   ================================================== -->
+   <head>
+      <!-- Your existing head content -->
+      <style>
+         .header-background {
+            background: url('images/1261728.jpg') no-repeat center center fixed;
+            background-size: cover;
+         }
+      </style>
+   </head>
+   
+   <header id="home" class="header-background">
+
+      <nav id="nav-wrap">
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+         <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+   
+         <ul id="nav" class="nav">
+            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+            <li><a class="smoothscroll" href="#about">About</a></li>
+            <li><a class="smoothscroll" href="#resume">Resume</a></li>
+         </ul>
+      </nav>
+   
+      <div class="row banner">
+         <div class="banner-text">
+            <h1 class="responsive-headline">Hi, I'm Travis</h1>
+            <p style="color: #fff;">and this page has been viewed <a id="view-count"></a> times :)</p>
+
+            <ul class="social">
+               <li><a href="https://linkedin.com/in/tg12"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="https://github.com/ItsTriich/azure-resume"><i class="fa fa-github"></i></a></li>
+            </ul>
+         </div>
+      </div>
+   
+      <p class="scrolldown">
+         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+      </p>
+   
+   </header>
+   
+
+
+   <!-- About Section
+   ================================================== -->
+   <section id="about">
+
+      <div class="row">
+
+         <div class="three columns">
+
+            
+
+         </div>
+
+         <div class="nine columns main-col">
+
+            <h2>ABOUT ME</h2>
+
+            <p> Hi, I'm Travis Gray, <span> My professional journey started as an IT Field Technician, where I was proud to be recognized as the highest-rated technician. I’ve since progressed to a role where I manage 25,000 assets and lead a dedicated team of 9 interns. In addition to overseeing these responsibilities, I provide exceptional support to VIP clients, expertly resolving complex hardware and software issues.</span>
+               
+         </br>
+         
+      
+         
+      </br>
+       I built this page as part of the <span><a href="https://github.com/madebygps/cgc-azure-resume">Cloud Guru Azure Resume Challenge.</a></span>
+            
+
+         </div> <!-- end .main-col -->
+
+      </div>
+
+   </section> <!-- About Section End-->
+
+
+   <!-- Resume Section
+   ================================================== -->
+   <section id="resume">
+
+      <!-- Education
+      ----------------------------------------------- -->
+      <div class="row education">
+
+         <div class="three columns header-col">
+            <h1><span>Certifications</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Azure Fundamentals AZ900</h3>
+                  <p class="info"><em class="date">March 2024</em></p>
+
+               </div>
+
+            </div> <!-- item end -->
+            
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Comptia A+</h3>
+                  <p class="info"><em class="date">December 2023</em></p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Comptia Network+</h3>
+                  <p class="info"><em class="date">July 2024</em></p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Comptia Security+</h3>
+                  <p class="info"><em class="date">August 2024</em></p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+           
+
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Education -->
+
+
+      <!-- Work
+      ----------------------------------------------- -->
+      <div class="row work">
+
+         <div class="three columns header-col">
+            <h1><span>Work</span></h1>
+         </div>
+
+         <div class="nine columns main-col">
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Titan Technologies</h3>
+                  <p class="info">Business System Analyst <span>&bull;</span> <em class="date">Feb 2024 - Present</em></p>
+
+                  <p>
+                     
+                     <li>Led the technology procurement process, overseeing inventory updates, distribution, and handling of 25,000+ assets, ensuring efficient resource management and allocation.</li> 
+                     <li>Through client consultations with VRM, I adeptly assess the requisite number of new devices, factoring in projected enrollment, device turnover, and contractual specifications to maximize productivity and lower costs.</li> 
+                     <li>Directed multiple projects involving a team of 14 interns and IT technicians to refresh 13,500 devices across 40 schools within 3 months, demonstrating strong leadership and project management skills.</li> 
+                     <li>Utilized Hyper-V and Dell Image Assist to create customized Windows 10 images, Successfully copied these images onto 20 USB drives., and Efficiently deployed the customized images to 2100 laptops, ensuring a smooth and timely laptop refresh for the organization.</li> 
+                     
+                     
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+            <div class="row item">
+
+               <div class="twelve columns">
+
+                  <h3>Titan Technologies</h3>
+                  <p class="info">IT Technician<span>&bull;</span> <em class="date">Jan 2023 - Feb 2024</em></p>
+
+                  <p>
+                     <li>Developed an image and administered it to 2100+ devices using Dell Image Assist saving the company thousands of dollars from hiring interns</li>
+                     <li>Assessed end user hardware, software, and/or network problems on non-functional or problematic machines and took actions to ensure the issue(s) were fixed within the SLA</li>
+                     <li>Wrote powershell scripts to automate data transfers and updates, which improved tech productivity by 60%</li>
+                     <li>Within starting this position, I became the highest rated and surveyed technician continuously, which led to me being promoted to a Business Systems Analyst within a year.</li>
+                     <li>Trained and mentored new and existing IT associates on implementation of new systems and day to day troubleshooting</li>
+                  
+                  </p>
+
+               </div>
+
+            </div> <!-- item end -->
+
+         </div> <!-- main-col end -->
+
+      </div> <!-- End Work -->
+
+
+      
+
+   </section> <!-- Resume Section End-->
+
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">
+
+         <div class="twelve columns">
+
+            <ul class="social-links">
+               <li><a href="https://linkedin.com/in/tg12"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="https://github.com/ItsTriich/azure-resume"><i class="fa fa-github"></i></a></li>
+            </ul>
+
+            <ul class="copyright">
+               <a href="https://www.styleshout.com/free-templates/ceevee/"> Template by CeeVee </a>
+                
+            </ul>
+
+         </div>
+
+         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+
+      </div>
+
+   </footer> <!-- Footer End-->
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="js/jquery.flexslider.js"></script>
+   <script src="js/waypoints.js"></script>
+   <script src="js/jquery.fittext.js"></script>
+   <script src="js/magnific-popup.js"></script>
+   <script src="js/init.js"></script>
+   <script src="viewCounter.js"></script>
+
+
 </body>
 
 </html>
