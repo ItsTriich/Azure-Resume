@@ -22,41 +22,23 @@ namespace My.Functions
             var logger = executionContext.GetLogger("ViewCounter");
             logger.LogInformation("C# HTTP trigger function processed a request.");
 
-            try
-            {
-                // Retrieve the current view count
-                var response = await container.ReadItemAsync<dynamic>("viewCounter", new PartitionKey("viewCounter"));
-                int currentCount = response.Resource.count;
+            // Retrieve the current view count
+            var response = await container.ReadItemAsync<dynamic>("viewCounter", new PartitionKey("viewCounter"));
+            int currentCount = response.Resource.count;
 
-                // Increment the view count
-                currentCount++;
+            // Increment the view count
+            currentCount++;
 
-                // Update the view count in Cosmos DB
-                var updatedItem = new { id = "viewCounter", count = currentCount };
-                await container.UpsertItemAsync(updatedItem, new PartitionKey("viewCounter"));
+            // Update the view count in Cosmos DB
+            var updatedItem = new { id = "viewCounter", count = currentCount };
+            await container.UpsertItemAsync(updatedItem, new PartitionKey("viewCounter"));
 
-                // Return the updated view count as JSON
-                var responseMessage = req.CreateResponse(HttpStatusCode.OK);
-                responseMessage.Headers.Add("Content-Type", "application/json");
-                var jsonResponse = JsonSerializer.Serialize(new { count = currentCount });
-                await responseMessage.WriteStringAsync(jsonResponse);
+            // Return the updated view count as JSON
+            var responseMessage = req.CreateResponse(HttpStatusCode.OK);
+            responseMessage.Headers.Add("Content-Type", "application/json");
+            await responseMessage.WriteStringAsync(JsonSerializer.Serialize(new { count = currentCount }));
 
-                return responseMessage;
-            }
-            catch (CosmosException ex)
-            {
-                logger.LogError($"Cosmos DB error: {ex.Message}");
-                var errorResponse = req.CreateResponse(HttpStatusCode.InternalServerError);
-                await errorResponse.WriteStringAsync("Error accessing the database.");
-                return errorResponse;
-            }
-            catch (Exception ex)
-            {
-                logger.LogError($"General error: {ex.Message}");
-                var errorResponse = req.CreateResponse(HttpStatusCode.InternalServerError);
-                await errorResponse.WriteStringAsync("An unexpected error occurred.");
-                return errorResponse;
-            }
+            return responseMessage;
         }
     }
 }
