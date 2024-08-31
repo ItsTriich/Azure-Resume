@@ -2,12 +2,14 @@ async function updateViewCount() {
     const apiUrl = 'https://functionapp-232545.azurewebsites.net/api/ViewCounter'; // Replace with your Azure Function URL
 
     try {
-        const response = await fetch(apiUrl, {
-            method: 'GET', // Assuming your function is using GET; change to POST if needed
-            headers: {
-                'Content-Type': 'application/json'
-            }
+        const response = await fetch('https://functionapp-232545.azurewebsites.net/api/ViewCounter')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            // Do something with data
         });
+        
 
         if (!response.ok) {
             throw new Error('Network response was not ok');
