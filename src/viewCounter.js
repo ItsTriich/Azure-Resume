@@ -1,7 +1,13 @@
-async function updateViewCount() {
-    const response = await fetch('http://localhost:7071/api/ViewCounter');
-    const data = await response.json();
-    document.getElementById('view-count').textContent = data.count;
-}
+const apiUrl = 'https://functionapp-232545.azurewebsites.net/api/ViewCounter?'; 
 
-window.onload = updateViewCount;
+try {
+    const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
