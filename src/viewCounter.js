@@ -3,7 +3,7 @@ async function updateViewCount() {
 
     try {
         const response = await fetch(apiUrl, {
-            method: 'POST', // or 'GET' depending on your function
+            method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -13,8 +13,8 @@ async function updateViewCount() {
             throw new Error('Network response was not ok');
         }
 
-        const count = await response.json();
-        document.getElementById('viewCount').innerText = count;
+        const data = await response.json();
+        document.getElementById('viewCount').innerText = `View count: ${data.count}`;
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
     }
@@ -22,3 +22,4 @@ async function updateViewCount() {
 
 // Call the function to update the view count
 updateViewCount();
+

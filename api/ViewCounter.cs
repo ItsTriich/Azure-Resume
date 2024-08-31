@@ -4,6 +4,7 @@ using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Azure.Cosmos;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace My.Functions
 {
@@ -32,9 +33,10 @@ namespace My.Functions
             var updatedItem = new { id = "viewCounter", count = currentCount };
             await container.UpsertItemAsync(updatedItem, new PartitionKey("viewCounter"));
 
-            // Return the updated view count
+            // Return the updated view count as JSON
             var responseMessage = req.CreateResponse(HttpStatusCode.OK);
-            await responseMessage.WriteStringAsync($"View count: {currentCount}");
+            responseMessage.Headers.Add("Content-Type", "application/json");
+            await responseMessage.WriteStringAsync(JsonSerializer.Serialize(new { count = currentCount }));
 
             return responseMessage;
         }
