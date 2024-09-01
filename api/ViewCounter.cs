@@ -1,3 +1,4 @@
+using System;
 using System.Net;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
@@ -10,8 +11,8 @@ namespace My.Functions
 {
     public static class ViewCounter
     {
-        private static readonly string EndpointUri = "https://cosmodb-232.documents.azure.com/";
-        private static readonly string PrimaryKey = "f7Tt6So2iwwZxCfenZ4WGlDdtceDvl27DBjOY4cM0L09Vs3mVmD46OFhio6EY63mzWwXRkLx9wFYACDbPDHRTA==";
+        private static readonly string EndpointUri = Environment.GetEnvironmentVariable("COSMOSDB_ENDPOINT");
+        private static readonly string PrimaryKey = Environment.GetEnvironmentVariable("COSMOSDB_PRIMARY_KEY");
         private static CosmosClient cosmosClient = new CosmosClient(EndpointUri, PrimaryKey);
         private static Database database = cosmosClient.GetDatabase("ViewCounterDB");
         private static Container container = database.GetContainer("Count");
