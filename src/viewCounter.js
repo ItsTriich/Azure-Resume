@@ -1,5 +1,5 @@
 async function updateViewCount() {
-    const apiUrl = 'https://functionapp-232545.azurewebsites.net/api/ViewCounter?'; // Replace with your Azure Function URL
+    const apiUrl = 'https://functionapp-5476.azurewebsites.net/api/ViewCounter?'; 
 
     try {
         const response = await fetch(apiUrl, {
