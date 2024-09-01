@@ -1,6 +1,6 @@
-# Vanilla JavaScript App
+# Travis's Azure Resume
 
-[Azure Static Web Apps](https://docs.microsoft.com/azure/static-web-apps/overview) allows you to easily build JavaScript apps in minutes. Use this repo with the [quickstart](https://docs.microsoft.com/azure/static-web-apps/getting-started?tabs=vanilla-javascript) to build and customize a new static site.
+This is my Cloud Resume Challenge built on Azure. Its a static website hosted on an Azure Static Web APP, with a visitor counter built on Azure Functions that updates and stores the view count persistantly in a CosmoDB database. The website is built with HTML, CSS, and JavaScript. The visitor counter is built with .NET 8 and Azure Functions.
 
 This repo is used as a starter for a _very basic_ HTML web application using no front-end frameworks.
 
