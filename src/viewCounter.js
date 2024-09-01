@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const data = await response.json();
-            document.getElementById('view-count').innerText = `View count: ${data.count}`;
+            document.getElementById('view-count').innerText = `${data.count}`;
         } catch (error) {
             console.error('There was a problem with the fetch operation:', error);
         }
