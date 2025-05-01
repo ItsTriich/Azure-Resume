@@ -1,4 +1,4 @@
-# Travis's Azure Resume
+# Azure Resume
 
 This is my Cloud Resume Challenge built on Azure. Its a Azure Static Web App, with a visitor counter built on Azure Functions that updates and stores the view count persistantly in a CosmoDB database. The website is built with HTML, CSS, and JavaScript. The visitor counter is built with .NET 8 and Azure Functions.
 
